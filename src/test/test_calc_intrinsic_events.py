@@ -1,9 +1,9 @@
 from unittest import TestCase
 
-from src.config import ConfigScalingLawTesting
-from src.dal import load_data_jforex
+from config import ConfigScalingLawTesting
+from dal import load_data_jforex
 import matplotlib.pyplot as plt
-from src.intrinsic_time import calc_intrinsic_events, NE
+from intrinsic_time import calc_intrinsic_events, NE
 
 
 class TestCalc_intrinsic_events(TestCase):

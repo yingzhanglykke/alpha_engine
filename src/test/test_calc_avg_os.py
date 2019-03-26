@@ -1,8 +1,8 @@
 from unittest import TestCase
 
-from src.config import ConfigScalingLawTesting
-from src.dal import load_data_jforex
-from src.scaling_laws import calc_avg_os
+from config import ConfigScalingLawTesting
+from dal import load_data_jforex
+from scaling_laws import calc_avg_os
 import math
 import matplotlib.pyplot as plt
 
@@ -18,7 +18,7 @@ class TestCalc_avg_os(TestCase):
         # define a list of threshold
         min_th = 0.0001
         max_th = 0.1
-        nr_points = 100
+        nr_points = 4
         incre = (math.log(max_th) - math.log(min_th))/(nr_points - 1)
         list_th = [math.exp(math.log(min_th) + i * incre) for i in range(nr_points)]
         # calculate avg_os

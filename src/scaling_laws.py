@@ -3,7 +3,7 @@ Functions for verifying the scaling laws
 """
 
 
-from src.intrinsic_time import calc_intrinsic_events, DC_UP, DC_DOWN, NE, OS_UP, OS_DOWN
+from intrinsic_time import calc_intrinsic_events, DC_UP, DC_DOWN, NE, OS_UP, OS_DOWN
 import numpy as np
 
 

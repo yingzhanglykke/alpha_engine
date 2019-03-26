@@ -2,8 +2,8 @@
 This module contains the function to convert tick-by-tick data to a list of intrinsic events DC / OS for a
 given threshold
 """
-from src.config import ConfigScalingLawTesting
-from src.dal import load_data_jforex
+from config import ConfigScalingLawTesting
+from dal import load_data_jforex
 import matplotlib.pyplot as plt
 
 DC_UP = 'Directional Change Upward'
