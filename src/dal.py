@@ -6,6 +6,12 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# todo: cannot read a 5GB csv file
+# Try something like this:
+# chunksize = 10 ** 6
+# for chunk in pd.read_csv(filename, chunksize=chunksize):
+#     process(chunk)
+
 
 def load_data_jforex(file_dir, file_name):
     """
