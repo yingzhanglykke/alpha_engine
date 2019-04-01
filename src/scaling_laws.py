@@ -26,6 +26,8 @@ def calc_avg_os(df, th_up, th_down):
     list_os = []
     count = 0
     df_ie = df[df['IE'] != NE]
+    df_ie['IE_next_period'] = df_ie['IE'].shift(-1)
+    df_ie = df_ie[df_ie['IE_next_period'].isin([DC_UP, DC_DOWN]) | df_ie['IE'].isin([DC_UP, DC_DOWN])]
     for (index, row) in df_ie.iterrows():
         price = row['Value']
         ie = row['IE']

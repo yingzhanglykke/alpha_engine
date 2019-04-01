@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from config import ConfigScalingLawTesting
-from dal import load_data_jforex
+from dal import load_data_jforex, load_data_jforex_by_chunk
 from scaling_laws import calc_avg_os
 import math
 import matplotlib.pyplot as plt
@@ -13,14 +13,18 @@ class TestCalc_avg_os(TestCase):
     def test_calc_avg_os(self):
         # prepare data
         file_dir = ConfigScalingLawTesting.data_path
+
         file_name = ConfigScalingLawTesting.file_name_test_jforex_two_days
         df = load_data_jforex(file_dir, file_name)
+        # file_name = ConfigScalingLawTesting.file_name_test_jforex_four_year
+        # df = load_data_jforex_by_chunk(file_dir, file_name)
+
         df['Value'] = df['Ask']
         df = df[['Datetime', 'Value']]
         # define a list of threshold
         min_th = 0.0001
         max_th = 0.1
-        nr_points = 10
+        nr_points = 20
         incre = (math.log(max_th) - math.log(min_th))/(nr_points - 1)
         list_th = [math.exp(math.log(min_th) + i * incre) for i in range(nr_points)]
         # calculate avg_os
