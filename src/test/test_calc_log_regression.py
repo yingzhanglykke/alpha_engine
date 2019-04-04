@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from scaling_laws import calc_log_regression
+from log_regression import calc_log_regression
 import pickle
 
 
